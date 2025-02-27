@@ -10,6 +10,9 @@
     --sicolor:silver;
     color:darkorchid
 }
+.web{
+    font-family: 'Times New Roman', Times, serif;
+}
 .container{
     min-width:100%;
     min-height:100vh;
@@ -27,6 +30,7 @@
     top: 0;
     left: 0;
     z-index: 999;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .navbar h1 {
     transform: translatex(20px);
@@ -101,9 +105,9 @@ label{
         border-top-right-radius: 5px;
         transition: all 0.5s;
     }
-    /* .subname:checked{
-        opacity: 0;
-    } */
+    .subname:checked{
+        display: none;
+    }
     label{
         display:block;
     }
