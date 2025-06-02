@@ -655,7 +655,7 @@ label{
     color:var(--scolor);
     padding: 10px;
     display:flex;
-    gap:50px;
+    gap:20px;
     flex-direction:column;
     transform:translateY(100px);
 }
