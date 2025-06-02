@@ -85,8 +85,16 @@
     font-size: 25px;
     margin-right: 20px;
 }
+.fa-xmark{
+    font-size: 25px;
+    margin-right: 20px;
+    display: none;
+    transition: all 0.5s;;
+}
 label{
     display:none;
+    cursor: pointer;
+    transition: all 0.5s;
 }
 .dn{
     display:none;
@@ -94,6 +102,25 @@ label{
 #c:checked~.subname{
     left:0;
 }
+#c:checked+label .fa-bars{
+    display: none;
+}
+#c:checked+label .fa-xmark{
+    display: block;
+    animation: small 0.5s linear;
+}
+@keyframes small{
+    0%{
+        transform:scale(0.2)
+    }
+    50%{
+        transform:scale(0.7)
+    }
+    100%{
+        transform:scale(1)
+    }
+}
+
 .subname a::before{
     content:"";
     position:absolute;
@@ -137,11 +164,10 @@ label{
         border-top-right-radius: 5px;
         transition: all 0.5s;
     }
-    .subname:checked{
-        display: none;
-    }
     label{
         display:block;
+        cursor: pointer;
+        transition: all 0.5s;
     }
 }
 
@@ -341,17 +367,19 @@ label{
     gap:30px;
     transform:translateY(50px);
 }
-#project::-webkit-scrollbar{
-    /* display: none; */
-}
 #project h1{
     text-align:center;
     text-shadow:2px 2px var(--sicolor);
 }
 #project>div{
     display:flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
     gap: 20px;
     justify-content: space-around;
+}
+#project>div::-webkit-scrollbar{
+    display: none;
 }
 .con1{
     width:28%;
@@ -390,17 +418,20 @@ label{
     flex: 0 1 35%;
     display: block;
 }
-.con1 button{
+.con1 a{
+    text-decoration: none;
+}
+.con1 .button{
     background-color:var(--pcolor);
     color: var(--scolor);
     border-radius:5px;
-    padding:5px;
+    padding:8px 18px;
     transition:all 0.5s;
 }
-.con1 button::after{
+.con1 .button::after{
     content:">>>"
 }
-.con1 button:active{
+.con1 .button:active{
     color:var(--bcolor);
     transform:scale(0.9);
 }
@@ -441,17 +472,20 @@ label{
     flex: 0 1 35%;
     display: block;
 }
-.con2 button{
+.con2 a{
+    text-decoration: none;
+}
+.con2 .button{
     background-color:var(--pcolor);
     color: var(--scolor);
     border-radius:5px;
-    padding:5px;
+    padding:8px 18px;
     transition:all 0.5s;
 }
-.con2 button::after{
+.con2 .button::after{
     content:">>>"
 }
-.con2 button:active{
+.con2 .button:active{
     color:var(--bcolor);
     transform:scale(0.9);
 }
@@ -492,17 +526,20 @@ label{
     flex: 0 1 35%;
     display: block;
 }
-.con3 button{
+.con3 a{
+    text-decoration: none;
+}
+.con3 .button{
     background-color:var(--pcolor);
     color: var(--scolor);
     border-radius:5px;
-    padding:5px;
+    padding:8px 18px;
     transition:all 0.5s;
 }
-.con3 button::after{
+.con3 .button::after{
     content:">>>"
 }
-.con3 button:active{
+.con3 .button:active{
     color:var(--bcolor);
     transform:scale(0.9);
 }
@@ -543,90 +580,72 @@ label{
     flex: 0 1 35%;
     display: block;
 }
-.con4 button{
+.con4 a{
+    text-decoration: none;
+}
+.con4 .button{
     background-color:var(--pcolor);
     color: var(--scolor);
     border-radius:5px;
-    padding:5px;
+    padding:8px 18px;
     transition:all 0.5s;
 }
-.con4 button::after{
+.con4 .button::after{
     content:">>>"
 }
-.con4 button:active{
+.con4 .button:active{
     color:var(--bcolor);
     transform:scale(0.9);
 }
 @media only screen and (max-width:1271px){
     #project>div{
-        display:grid;
-        grid-template-columns: auto auto;
-        gap:20px;
+        padding:10px;
     }
     .con1{
         margin: auto;
-        width:80%;
+        width:40%;
+        flex-grow: 1;
     }
     .con2{
         margin: auto;
-        width:80%;
+        width:40%;
+        flex-grow: 1;
     }
     .con3{
         margin: auto;
-        width:87%;
+        width:40%;
+        flex-grow: 1;
     }
     .con4{
         margin: auto;
-        width:87%;
+        width:40%;
+        flex-grow: 1;
     }
 }
-@media only screen and (max-width:750px){
+@media only screen and (max-width:700px){
     .con1{
-        max-width:100%;
+        width:90%;
+    }
+    .con1:hover{
+        height:500px;
     }
     .con2{
-        max-width:100%;
+        width:90%;
+    }
+    .con2:hover{
+        height:530px;
     }
     .con3{
-        max-width:100%;
+        width:90%;
+    }
+    .con3:hover{
+        height:450px;
     }
     .con4{
-        max-width:100%;
+        width:90%;
     }
-}
-@media only screen and (max-width:576px){
-    #project>div{
-        grid-template-columns: auto;
-    }
-    .con1{
-        margin: auto;
-        max-width:80%;
-    }
-    .con2{
-        margin: auto;
-        max-width:80%;
-    }
-    .con3{
-        margin: auto;
-        max-width:80%;
-    }
-    .con4{
-        margin: auto;
-        max-width:80%;
-    }
-}
-@media only screen and (max-width:400px){
-    .con1{
-        max-width:100%;
-    }
-    .con2{
-        max-width:100%;
-    }
-    .con3{
-        max-width:100%;
-    }
-    .con4{
-        max-width:100%;
+    .con4:hover{
+        height:500px;
     }
 }
 #contact{
@@ -647,6 +666,11 @@ label{
     gap:10px;
     justify-content: center;
 }
+.phone a{
+    text-decoration: none;
+    font-size: x-large;
+    color: var(--scolor);
+}
 .fa-phone{
     font-size: 25px;
     transform: translateY(4px);
@@ -659,6 +683,11 @@ label{
     display:flex;
     gap:10px;
     justify-content: center;
+}
+.email a{
+    text-decoration: none;
+    font-size: x-large;
+    color: var(--scolor);
 }
 .font{
     display:flex;
