@@ -653,6 +653,7 @@ label{
     min-height:200px;
     background-color:var(--bcolor);
     color:var(--scolor);
+    padding: 10px;
     display:flex;
     gap:50px;
     flex-direction:column;
@@ -660,6 +661,9 @@ label{
 }
 .c1 h2{
     text-align:center;
+}
+.c2{
+    padding-bottom: 8px;
 }
 .phone{
     display:flex;
