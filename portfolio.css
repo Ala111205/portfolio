@@ -176,6 +176,7 @@ label{
     min-height:500px;
     background-color: var(--bcolor);
     margin-top: 70px;
+    padding: 10px;
 }
 .name{
     color:var(--pcolor);
