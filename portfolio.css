@@ -32,7 +32,7 @@
 .block{
     animation: moves linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 35% ;
+    animation-range: entry 0% ;
 }
 @keyframes moves {
     from{
@@ -337,10 +337,12 @@ label{
     min-width:100%;
     min-height:500px;
     display:flex;
-    flex-direction: column;
     justify-content: center;
     gap:30px;
     transform:translateY(50px);
+}
+#project::-webkit-scrollbar{
+    /* display: none; */
 }
 #project h1{
     text-align:center;
@@ -348,6 +350,7 @@ label{
 }
 #project>div{
     display:flex;
+    gap: 20px;
     justify-content: space-around;
 }
 .con1{
@@ -368,25 +371,24 @@ label{
 .con1 .image img{
     width:100%;
     height:100%;
-    object-fit: contain;
 }
-.con1 div{
+.con1 .text{
     width:100%;
     flex:0 0 0%;
-    opacity: 0;
+    display: none;
     padding: 30px;
-    transition: flex-basis 0.5s ease,
-     opacity 0.5s ease
+    transition: flex 0.5s ease,
+    display 0.5s ease
 }
 .con1:hover{
     height:400px;
 }
 .con1:hover .image{
-    flex:0 1 58%; 
+    flex:0 1 63%; 
 }
-.con1:hover .con1 div{
-    flex: 0 1 40%;
-    opacity: 1;
+.con1:hover .text{
+    flex: 0 1 35%;
+    display: block;
 }
 .con1 button{
     background-color:var(--pcolor);
@@ -420,25 +422,24 @@ label{
 .con2 .image img{
     width:100%;
     height:100%;
-    object-fit: contain;
 }
-.con2 div{
+.con2 .text{
     width:100%;
     flex:0 0 0%;
-    opacity: 0;
+    display: none;
     padding: 30px;
-    transition: flex-basis 0.5s ease,
-     opacity 0.5s ease
+    transition: flex 0.5s ease,
+    display 0.5s ease
 }
 .con2:hover{
     height:400px;
 }
 .con2:hover .image{
-    flex:0 1 58%; 
+    flex:0 1 63%; 
 }
-.con2:hover .con2 div{
-    flex: 0 1 40%;
-    opacity: 1;
+.con2:hover .text{
+    flex: 0 1 35%;
+    display: block;
 }
 .con2 button{
     background-color:var(--pcolor);
@@ -472,25 +473,24 @@ label{
 .con3 .image img{
     width:100%;
     height:100%;
-    object-fit: contain;
 }
-.con3 div{
+.con3 .text{
     width:100%;
     flex:0 0 0%;
-    opacity: 0;
+    display: none;
     padding: 30px;
-    transition: flex-basis 0.5s ease,
-     opacity 0.5s ease
+    transition: flex 0.5s ease,
+    display 0.5s ease
 }
 .con3:hover{
     height:400px;
 }
 .con3:hover .image{
-    flex:0 1 58%; 
+    flex:0 1 63%; 
 }
-.con3:hover .con3 div{
-    flex: 0 1 40%;
-    opacity: 1;
+.con3:hover .text{
+    flex: 0 1 35%;
+    display: block;
 }
 .con3 button{
     background-color:var(--pcolor);
@@ -524,25 +524,24 @@ label{
 .con4 .image img{
     width:100%;
     height:100%;
-    object-fit: contain;
 }
-.con4 div{
+.con4 .text{
     width:100%;
     flex:0 0 0%;
-    opacity: 0;
+    display: none;
     padding: 30px;
-    transition: flex-basis 0.5s ease,
-     opacity 0.5s ease
+    transition: flex 0.5s ease,
+    display 0.5s ease
 }
 .con4:hover{
     height:400px;
 }
 .con4:hover .image{
-    flex:0 1 58%; 
+    flex:0 1 63%; 
 }
-.con4:hover .con4 div{
-    flex: 0 1 40%;
-    opacity: 1;
+.con4:hover .text{
+    flex: 0 1 35%;
+    display: block;
 }
 .con4 button{
     background-color:var(--pcolor);
@@ -566,37 +565,33 @@ label{
     }
     .con1{
         margin: auto;
-        min-width:80%;
-        height:500px;
+        width:80%;
     }
     .con2{
         margin: auto;
-        min-width:80%;
-        height:500px;
+        width:80%;
     }
     .con3{
         margin: auto;
-        min-width:80%;
-        height:500px;
+        width:87%;
     }
     .con4{
         margin: auto;
-        min-width:80%;
-        height:500px;
+        width:87%;
     }
 }
 @media only screen and (max-width:750px){
     .con1{
-        min-width:100%;
+        max-width:100%;
     }
     .con2{
-        min-width:100%;
+        max-width:100%;
     }
     .con3{
-        min-width:100%;
+        max-width:100%;
     }
     .con4{
-        min-width:100%;
+        max-width:100%;
     }
 }
 @media only screen and (max-width:576px){
@@ -605,37 +600,33 @@ label{
     }
     .con1{
         margin: auto;
-        min-width:80%;
-        height:500px;
+        max-width:80%;
     }
     .con2{
         margin: auto;
-        min-width:80%;
-        height:500px;
+        max-width:80%;
     }
     .con3{
         margin: auto;
-        min-width:80%;
-        height:500px;
+        max-width:80%;
     }
     .con4{
         margin: auto;
-        min-width:80%;
-        height:500px;
+        max-width:80%;
     }
 }
 @media only screen and (max-width:400px){
     .con1{
-        min-width:100%;
+        max-width:100%;
     }
     .con2{
-        min-width:100%;
+        max-width:100%;
     }
     .con3{
-        min-width:100%;
+        max-width:100%;
     }
     .con4{
-        min-width:100%;
+        max-width:100%;
     }
 }
 #contact{
