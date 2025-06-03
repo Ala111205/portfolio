@@ -188,6 +188,9 @@ label{
     position:relative;
     color: var(--scolor);
 }
+.txt::-webkit-scrollbar{
+    display: none;
+}
 .txt1{
     color:var(--pcolor);
 }
@@ -260,6 +263,30 @@ label{
         opacity: 0;
         bottom:8px;  
     }
+}
+.resume{
+    width:85%;
+    display:flex;
+    align-items: center;
+    gap:5px;
+}
+.resume a{
+    text-decoration: none;
+    padding:8px 20px;
+    border-radius: 6px;
+    background-color: var(--pcolor);
+    color: var(--scolor);
+    transition: all 0.5s;
+    cursor:pointer;
+}
+.resume h4{
+    color: var(--scolor);
+}
+.resume h4::after{
+    content: ":-";
+}
+.resume a:active{
+    transform: scale(0.9);
 }
 @media only screen and (max-width:500px){
     #home img{
