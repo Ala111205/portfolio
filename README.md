@@ -1,2 +1,2 @@
-# portfolio
-Created the portfolio using HTML, CSS and Javascript.
+# 🌐 Portfolio
+A personal portfolio website built with HTML, CSS, and JavaScript.
